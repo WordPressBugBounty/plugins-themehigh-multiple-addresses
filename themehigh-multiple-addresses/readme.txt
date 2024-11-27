@@ -3,8 +3,8 @@ Contributors: ThemeHigh
 Donate link: https://themehigh.com/
 Tags: Multiple Shipping Addresses, Multiple Addresses, WooCommerce Multiple Addresses, Shipping Addresses, WooCommerce Address Book
 Requires at least: 5.2
-Tested up to: 6.6
-Stable tag: 2.2.7
+Tested up to: 6.7
+Stable tag: 2.2.8
 Requires PHP: 7.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -148,6 +148,10 @@ Manual installation method requires downloading the 'Woocommerce Multiple Addres
 4. display multiple billing addresses.
 
 == Changelog ==
+
+= 2.2.8 =
+* Added WooCommerce 9.4 compatibility.
+* Added WordPress 6.7 compatibility.
 
 = 2.2.7 =
 * Added WooCommerce 9.2 compatibility.
