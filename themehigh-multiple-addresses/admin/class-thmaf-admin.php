@@ -545,7 +545,7 @@ if(!class_exists('THMAF_Admin')):
                     max-width: 960px;
                     /*height: 80vh;*/
                     max-height: 640px;
-                    min-height: 560px;
+                    /* min-height: 560px; */
                     position: relative;
                 }
                 .model-header {

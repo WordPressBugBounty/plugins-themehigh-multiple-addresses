@@ -562,7 +562,7 @@ if(!class_exists('THMAF_Admin_Settings')) :
          */
         public function render_form_note($props, $atts=array()) {
             ?>
-            <tr valign="top"><td colspan="<?php echo esc_html($props['colspan']); ?>" class="thpladmin-form-note"><p><?php  echo esc_html('The maximum allowed multi shipping locations using the free plugin is 3. To allow multi shipping to unlimited number of locations,');?> <a href="<?php echo esc_url('https://www.themehigh.com/product/woocommerce-multiple-addresses-pro/'); ?>" target="_blank"><?php echo 'upgrade'; ?> </a> <?php echo esc_html('to the premium plugin.');?></p></td></tr>
+            <tr valign="top"><td colspan="<?php echo esc_html($props['colspan']); ?>" class="thpladmin-form-note"><p><?php  echo esc_html('The maximum allowed multi shipping locations using the free plugin is 2. To allow multi shipping to unlimited number of locations,');?> <a href="<?php echo esc_url('https://www.themehigh.com/product/woocommerce-multiple-addresses-pro/'); ?>" target="_blank"><?php echo 'upgrade'; ?> </a> <?php echo esc_html('to the premium plugin.');?></p></td></tr>
         <?php }
     }
 endif;

@@ -101,7 +101,7 @@ if(!class_exists('THMAF_Public')) :
             }
 
             $script_var = array(
-                'ajax_url'                  => admin_url('admin-ajax.php'),
+                'ajax_url' => apply_filters('thwmaf_should_use_wc_ajax_endpoint', false) ? WC_AJAX::get_endpoint('') : admin_url('admin-ajax.php'),
                 'address_fields_billing'    => $address_fields_billing,
                 'address_fields_shipping'   => $address_fields_shipping,
                 'store_country'             => $store_country,

@@ -3,13 +3,13 @@
  * Plugin Name:       Multiple Shipping Addresses for WooCommerce (Address Book)
  * Plugin URI:        https://www.themehigh.com/product/woocommerce-multiple-addresses-pro
  * Description:       Add and save multiple billing and shipping addresses. And enable the Multiple-shipping feature for a seamless shopping experience.
- * Version:           2.2.8
+ * Version:           2.2.9
  * Author:            ThemeHigh
  * Author URI:        https://www.themehigh.com/
  * Text Domain:       themehigh-multiple-addresses
  * Domain Path:       /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 9.4
+ * WC tested up to: 9.8
  */
 
 if(!defined('WPINC')) { 
@@ -35,7 +35,7 @@ if (!function_exists('check_pro_plugin_is_activated')) {
 }
 if(is_woocommerce_active()) {
     if(!check_pro_plugin_is_activated()) {
-    define('THMAF_VERSION', '2.2.8');
+    define('THMAF_VERSION', '2.2.9');
     !defined('THMAF_SOFTWARE_TITLE') && define('THMAF_SOFTWARE_TITLE', 'Woocommerce Multiple Addresses');
     !defined('THMAF_FILE') && define('THMAF_FILE', __FILE__);
     !defined('THMAF_PATH') && define('THMAF_PATH', plugin_dir_path(__FILE__));

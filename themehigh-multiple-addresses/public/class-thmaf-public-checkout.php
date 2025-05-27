@@ -88,6 +88,9 @@ if(!class_exists('THMAF_Public_Checkout')) :
 		 * @return void
 		 */
         public static function thmaf_save_address() {
+        	// Start with cleaning any existing output
+    		ob_start();
+
 			check_ajax_referer( 'thmaf_cart_ship_form_action', 'security');
 
             $error_messgs = '';
@@ -177,7 +180,17 @@ if(!class_exists('THMAF_Public_Checkout')) :
 				'address_count' => $address_count,
 			);
 
-			wp_send_json($response);
+			// Clean all output buffers (in case any unwanted output was generated)
+            while (ob_get_level()) {
+                ob_end_clean();
+            }
+
+            // Set headers for the JSON response
+            header('Content-Type: application/json');
+            header('Cache-Control: no-cache, no-store, must-revalidate');
+
+            wp_send_json($response); // Send the JSON response.
+
 			exit();
         }
 		

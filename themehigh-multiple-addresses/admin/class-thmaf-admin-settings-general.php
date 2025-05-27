@@ -72,7 +72,7 @@ if(!class_exists('THMAF_Admin_Settings_General')) :
                 'link'=>esc_html__('Link', 'themehigh-multiple-addresses')
             );
 
-            $multi_shipping_note = 'The maximum allowed multi shipping locations using the free plugin is 3. To allow multi shipping to unlimited number of locations, upgrade to the premium plugin.';
+            $multi_shipping_note = 'The maximum allowed multi shipping locations using the free plugin is 2. To allow multi shipping to unlimited number of locations, upgrade to the premium plugin.';
             $limit = 2;
 
             $settings_props_billing = array(
