@@ -2594,6 +2594,9 @@ if(!class_exists('THMAF_Public')) :
                     $item_id = $order_item_id;
                     $product_id = $order_item->get_product_id();
                     $product = wc_get_product( $product_id );
+                    if(!$product) {
+                        return $formatted_meta;
+                    }
                     if (($product-> is_virtual('yes')) || ($product->is_downloadable('yes'))) {
                         return $formatted_meta;
                     }

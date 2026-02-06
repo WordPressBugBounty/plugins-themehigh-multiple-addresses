@@ -835,12 +835,18 @@ var thmaf_address= (
 
             var cart_shipping = [];
             var data_arr = [];
+            var hidden_ids =[];
+
+            $('.thmaf-cart-shipping-form-section').find('.thwcfe-disabled-field').each(function(){ 
+   			hidden_ids.push($(this).attr('id'));
+		    });
 
             cart_shipping = $('#cart_shipping_form_wrap :input').serialize();
             var data = {
                 action: 'thmaf_save_address',
                 security: $( '#cart_ship_form_action' ).val(),
                 cart_shipping: cart_shipping,
+                cfe_hide_field : hidden_ids
             };
             $.ajax({
                 url: thmaf_public_var.ajax_url,

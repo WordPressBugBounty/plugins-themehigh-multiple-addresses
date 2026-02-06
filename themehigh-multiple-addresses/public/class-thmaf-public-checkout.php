@@ -99,6 +99,7 @@ if(!class_exists('THMAF_Public_Checkout')) :
             
             $cart_shipping = isset($_POST['cart_shipping']) ? $_POST['cart_shipping'] : '';
             $cart_shipping_data = self::thmaf_unserialize_form($cart_shipping);
+			$cfe_hide_field = isset($_POST['cfe_hide_field']) ? $_POST['cfe_hide_field'] : '';
 
 			$country = isset($cart_shipping_data['shipping_country']) ? $cart_shipping_data['shipping_country'] : '';
 			$address = WC()->countries->get_address_fields(wc_clean(wp_unslash($country)), $load_address . '_');
@@ -121,7 +122,7 @@ if(!class_exists('THMAF_Public_Checkout')) :
 				}
 			}
 			// Validate the form.
-			$true_check = self::validate_cart_shipping_addr_data($address_data, $cart_shipping_data);
+			$true_check = self::validate_cart_shipping_addr_data($address_data, $cart_shipping_data,$cfe_hide_field);
             $true_check_val = '';
 			if($true_check == 'true') {
 				THMAF_Utils::save_address_to_user($user_id, $address_new, 'shipping');
@@ -205,9 +206,12 @@ if(!class_exists('THMAF_Public_Checkout')) :
          * @return string.
          */
 
-		public static function validate_cart_shipping_addr_data($address_data, $sipping_data) {
+		public static function validate_cart_shipping_addr_data($address_data, $sipping_data, $cfe_hide_field=array()) {
 			$true_check = array();
 			$error_check = '';
+			if (!is_array($cfe_hide_field)) {
+				$cfe_hide_field = array();
+			}
 
 			if(!empty($address_data) && is_array($address_data)) {
 				foreach($address_data as $dkey => $dvalue) {
@@ -218,9 +222,11 @@ if(!class_exists('THMAF_Public_Checkout')) :
 				
 					// check is field is required and value is empty.
 					if (! empty($required) && empty($value)) {
-						$error_check .= esc_html__($dvalue['label'].' is a required field.', 'woocommerce');
-						$error_check .= '</br>';
-						$true_check[] = false;
+						if (!in_array($dkey, $cfe_hide_field)) {	
+							$error_check .= esc_html__($dvalue['label'].' is a required field.', 'woocommerce');
+							$error_check .= '</br>';
+							$true_check[] = false;
+						}
 					} else {
 						$true_check[] = true;
 					}

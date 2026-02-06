@@ -4,7 +4,7 @@ Donate link: https://themehigh.com/
 Tags: Multiple address, Address Book, shipping addresses, address
 Requires at least: 5.2
 Tested up to: 6.8
-Stable tag: 2.2.9
+Stable tag: 2.3.0
 Requires PHP: 7.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -275,6 +275,10 @@ To add an unlimited number of addresses, an upgrade to the premium version is re
 4. display multiple billing addresses.
 
 == Changelog ==
+
+= 2.3.0 =
+* Added WooCommerce 10.2 compatibility.
+* Improved compatibility with [Checkout Field Editor for WooCommerce](https://www.themehigh.com/product/woocommerce-checkout-field-editor-pro/).
 
 = 2.2.9 =
 * Added WooCommerce 9.8 compatibility.
